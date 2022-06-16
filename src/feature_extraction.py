@@ -7,6 +7,7 @@ import pathlib
 import matplotlib.pyplot as plt
 import os
 from sklearn.utils import shuffle
+import random
 
 def load_audio_data(dir_path: str, target_sample_rate: int = 4000, shuffle_random_state: int = 123) -> None:
     X = []
@@ -63,9 +64,38 @@ def feature_extraction(write_path: str, X: np.ndarray, y: np.ndarray, class_name
         plt.cla()
         plt.clf()
 
+def display_random_samples(X: np.ndarray, y: np.ndarray, class_names: List[str]) -> None:
+    random.seed(1234)
+    random_index = random.sample(range(len(y)), 2)
+
+    X, y = X[random_index], y[random_index]
+
+    fig, ax = plt.subplots(2, 2, figsize=(8, 5))
+
+    img = display.waveshow(X[0], sr=4000, ax=ax[0, 0])
+    ax[0, 0].set(title='{}'.format(class_names[y[0]]))
+
+    ms = mel_spec(X[0])
+    img = display.specshow(ms, y_axis='mel', x_axis='time', sr=4000, hop_length=128, ax=ax[0, 1])
+    fig.colorbar(img, ax=ax[0, 1], format='%+2.0f dB')
+    ax[0, 1].set(title='{}'.format(class_names[y[0]]))
+
+    img = display.waveshow(X[1], sr=4000, ax=ax[1, 0])
+    ax[1, 0].set(title='{}'.format(class_names[y[1]]))
+
+    ms = mel_spec(X[1])
+    img = display.specshow(ms, y_axis='mel', x_axis='time', sr=4000, hop_length=128, ax=ax[1, 1])
+    fig.colorbar(img, ax=ax[1, 1], format='%+2.0f dB')
+    ax[1, 1].set(title='{}'.format(class_names[y[1]]))
+
+    plt.tight_layout()
+    plt.savefig('results/random_samples.png', dpi=200)
+    plt.show()
+
 if __name__ == '__main__':
     read_path = 'results/preprocessing/preprocessed_respiratory_cycles'
     write_path = 'results/preprocessing/mel_spectrograms'
 
     X, y, class_names = load_audio_data(read_path)
     feature_extraction(write_path, X, y, class_names)
+    #display_random_samples(X, y, class_names)

@@ -26,13 +26,13 @@ def get_resnet50v2_model(input_shape: Tuple[int, int] = (73, 99), learning_rate:
     return model
 
 def unfreeze_resnet50v2_layers(model: Model, unfreeze_layers: List[str] = ['conv2', 'conv3', 'conv4', 'conv5'], 
-    learning_rate: float = 1e-5) -> Model:
+    fine_tune_learning_rate: float = 1e-5) -> Model:
     for layer in model.layers:
         for layer_name in unfreeze_layers:
             if layer_name in layer.name:
                 layer.trainable = True
 
-    opt = tf.optimizers.Adam(learning_rate=learning_rate)
+    opt = tf.optimizers.Adam(learning_rate=fine_tune_learning_rate)
     model.compile(optimizer=opt, 
         loss=tf.losses.SparseCategoricalCrossentropy(), 
         metrics=['accuracy'])

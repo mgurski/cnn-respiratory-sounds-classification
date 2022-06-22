@@ -6,9 +6,9 @@ import numpy as np
 from tensorflow.keras.backend import clear_session
 import gc
 from typing import Callable, Tuple, List
-from train import train_model
-from data_augmentation import spec_augmentation
-from utils import plot_confusion_matrix
+from .train import train_model
+from .data_augmentation import spec_augmentation
+from utilities.utils import plot_confusion_matrix
 
 def prepare_generators(X_train: np.ndarray, y_train: np.ndarray, X_test: np.ndarray, y_test: np.ndarray, 
     color_mode: str = 'grayscale', input_shape: Tuple[int, int] = (73, 99), 
@@ -127,6 +127,8 @@ def simple_split_model_evaluation(X: np.ndarray, y: np.ndarray, class_names: Lis
 
     report_write_path = write_path + 'report.csv'
     write_path_png = write_path + 'conf_matrix.png'
+    write_path_model = write_path + 'saved_model.h5'
 
     report_df.to_csv(report_write_path, mode='w+')
     plot_confusion_matrix(write_path_png, class_names, y_test, y_pred)
+    model.save(write_path_model)

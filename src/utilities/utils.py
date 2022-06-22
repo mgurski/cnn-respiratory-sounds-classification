@@ -6,10 +6,8 @@ from sklearn.utils import shuffle
 from typing import Tuple, List
 import seaborn as sns
 import matplotlib.pyplot as plt
-import json
 import argparse
-
-from params import load_parameters
+from training.params import load_parameters
 
 def filepaths_to_df(dir_path: str) -> pd.DataFrame:
     filepaths = []

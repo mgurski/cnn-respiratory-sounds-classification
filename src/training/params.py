@@ -22,7 +22,7 @@ DEFAULT_CUSTOM_MODEL_HYPERPARAMETERS = {
     "model_hyperparameters": {
         "input_shape": [73, 99],
         "learning_rate": 0.0001,
-        "spatial_dropout": 0.1,
+        "spatial_dropout": 0.15,
         "filter_sizes": [64, 128, 256],
         "kernel_sizes": [ [11, 9], [9, 7], [5, 5] ],
         },
@@ -42,7 +42,7 @@ DEFAULT_VGG16_HYPERPARAMETERS = {
     },
     "fine_tune_epochs": 150,
     "color_mode": 'rgb',
-    "epochs": 100,
+    "epochs": 10,
     "batch_size": 64, 
 }
 
@@ -52,12 +52,12 @@ DEFAULT_RESNET50V2_HYPERPARAMETERES = {
         "learning_rate": 0.0001,
     },
     "fine_tune_hyperparameters": {
-        "fine_tune_learning_rate": 0.000005,
+        "fine_tune_learning_rate": 0.00001,
         "unfreeze_layers": ['conv4', 'conv5']
     },
-    "fine_tune_epochs": 150,
+    "fine_tune_epochs": 200,
     "color_mode": 'rgb',
-    "epochs": 100,
+    "epochs": 10,
     "batch_size": 64, 
 }
 

@@ -2,14 +2,15 @@ from librosa import display
 import librosa
 import shutil
 import numpy as np
-from typing import List
+from typing import List, Tuple
 import pathlib
 import matplotlib.pyplot as plt
 import os
 from sklearn.utils import shuffle
 import random
 
-def load_audio_data(dir_path: str, target_sample_rate: int = 4000, shuffle_random_state: int = 123) -> None:
+def load_audio_data(dir_path: str, target_sample_rate: int = 4000, 
+    shuffle_random_state: int = 123) -> Tuple[np.ndarray, np.ndarray, List[str]]:
     X = []
     y = []
     class_names = []

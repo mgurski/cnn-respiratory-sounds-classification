@@ -42,6 +42,7 @@ def plot_confusion_matrix(save_path: str, class_names: List[str], y_test: np.nda
     plt.figure(figsize = (10, 7))
     ax = sns.heatmap(df, annot=True, annot_kws={"size": 12}, fmt='.2g', cmap='Blues')
     ax.set(xlabel='Predicited', ylabel='True')
+    plt.tight_layout()
     plt.savefig(save_path) 
 
 def sub_dict_params(dict_a: dict, dict_b: dict) -> dict:

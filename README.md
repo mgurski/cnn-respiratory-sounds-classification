@@ -3,19 +3,19 @@ Application of convolutional neural networks to the classification of respirator
 
 Mel-spectrograms were used as the input representation.
 
-<img src="results/random_samples.png" alt="random_samples" width="320" height="200"/>
+<img src="img/random_samples.png" alt="random_samples" width="320" height="200"/>
 
 </br>
 
 Time and frequency masking as in [SpecAugment [2]](#2) and horizontal flips were used for online data augmentation.
 
-<img src="results/augmentations.png" alt="aug" width="320" height="200"/>
+<img src="img/augmentations.png" alt="aug" width="320" height="200"/>
 
 </br>
 
 The best results were obtained for the custom model which used non-standard convolutional filters. Normalized confusion matrix obtained for the custom model is shown below. A simple train/test split was used with 80% of the data used for training and 20% used for validation.
 
-<img src="results/custom_model/conf_matrix.png" alt="conf" width="320" height="200"/>
+<img src="img/conf_matrix.png" alt="conf" width="320" height="200"/>
 
 </br>
 

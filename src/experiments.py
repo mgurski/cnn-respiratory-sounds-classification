@@ -1,6 +1,6 @@
 from training.params import load_parameters, DEFAULT_CUSTOM_MODEL_HYPERPARAMETERS, DEFAULT_RESNET50V2_HYPERPARAMETERES, DEFAULT_VGG16_HYPERPARAMETERS
 from models.custom_model import get_custom_model
-from utilities.utils import sub_dict_params, load_data
+from training.utils import sub_dict_params, load_data
 from sklearn.model_selection import ParameterGrid
 from training.evaluation import cross_validation_model_evaluation
 from models.vgg16_transfer_learning import get_vgg_16_model, unfreeze_vgg16_layers

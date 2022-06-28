@@ -8,7 +8,7 @@ import gc
 from typing import Callable, Tuple, List
 from .train import train_model
 from .data_augmentation import spec_augmentation
-from utilities.utils import plot_confusion_matrix
+from .utils import plot_confusion_matrix
 
 def prepare_generators(X_train: np.ndarray, y_train: np.ndarray, X_test: np.ndarray, y_test: np.ndarray, 
     color_mode: str = 'grayscale', input_shape: Tuple[int, int] = (73, 99), 

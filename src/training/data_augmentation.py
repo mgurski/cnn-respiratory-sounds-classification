@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import math
 from keras_preprocessing.image import ImageDataGenerator, load_img
 import random
-from utilities.utils import load_data
+from .utils import load_data
 
 def time_mask(image: np.ndarray, num: int = 1, min: float = 0.05, max: float = 0.2, 
     p: int = 1) -> np.ndarray:

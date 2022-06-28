@@ -5,7 +5,7 @@ from models.custom_model import get_custom_model
 from models.resnet50v2_transfer_learning import get_resnet50v2_model, unfreeze_resnet50v2_layers
 from models.vgg16_transfer_learning import get_vgg_16_model, unfreeze_vgg16_layers
 from training.params import DEFAULT_CUSTOM_MODEL_HYPERPARAMETERS, DEFAULT_RESNET50V2_HYPERPARAMETERES, DEFAULT_VGG16_HYPERPARAMETERS
-from utilities.utils import check_valid_model_hyperparameters_json_path, load_data
+from training.utils import check_valid_model_hyperparameters_json_path, load_data
 
 if __name__ == '__main__':
     data_path = 'results/preprocessing/mel_spectrograms'

@@ -7,7 +7,7 @@ from typing import Tuple, List
 import seaborn as sns
 import matplotlib.pyplot as plt
 import argparse
-from training.params import load_parameters
+from .params import load_parameters
 
 def filepaths_to_df(dir_path: str) -> pd.DataFrame:
     filepaths = []

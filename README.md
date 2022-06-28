@@ -3,19 +3,19 @@ Application of convolutional neural networks to the classification of respirator
 
 Mel-spectrograms were used as the input representation.
 
-<img src="img/random_samples.png" alt="random_samples" width="320" height="200"/>
+<img src="img/random_samples.png" alt="random_samples" width="480" height="300"/>
 
 </br>
 
 Time and frequency masking as in [SpecAugment [2]](#2) and horizontal flips were used for online data augmentation.
 
-<img src="img/augmentations.png" alt="aug" width="320" height="200"/>
+<img src="img/augmentations.png" alt="aug" width="480" height="300"/>
 
 </br>
 
 The best results were obtained for the custom model which used non-standard convolutional filters. Normalized confusion matrix obtained for the custom model is shown below. A simple train/test split was used with 80% of the data used for training and 20% used for validation.
 
-<img src="img/conf_matrix.png" alt="conf" width="320" height="200"/>
+<img src="img/conf_matrix.png" alt="conf" width="480" height="300"/>
 
 </br>
 
@@ -41,6 +41,8 @@ Run the evaluation of the chosen model \
 <a href="https://bhichallenge.med.auth.gr/ICBHI_2017_Challenge" id="1">
 1. Rocha BM et al. (2019) "An open access database for the evaluation of respiratory sound classification algorithms" Physiological Measurement 40 035001
 </a>
+
+</br>
 
 <a href="https://arxiv.org/abs/1904.08779" id="2">
 2. Daniel S. Park, William Chan, Yu Zhang, Chung-Cheng Chiu, Barret Zoph, Ekin D. Cubuk, and Quoc V. Le. "SpecAugment: A simple data augmentation method for automatic speech recognition." In Interspeech 2019. ISCA, sep 2019

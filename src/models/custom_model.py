@@ -1,9 +1,10 @@
 import tensorflow as tf
 from typing import Tuple
+from keras import Model
 
 def get_custom_model(input_shape: Tuple[int, int] = (73, 99), learning_rate: float = 0.0001, 
     spatial_dropout: float = 0.1, filter_sizes: Tuple[int, int, int] = (64, 128, 256), 
-    kernel_sizes: Tuple[Tuple[int, int], Tuple[int, int], Tuple[int, int]] = ((11, 7), (9, 5), (5, 5))):
+    kernel_sizes: Tuple[Tuple[int, int], Tuple[int, int], Tuple[int, int]] = ((11, 7), (9, 5), (5, 5))) -> Model:
     """
     Custom model with non-standard convolutional filter sizes. The idea is based on the differences between spectrograms 
     and standard images - mainly the non-local frequency components distribution on the y axis. 

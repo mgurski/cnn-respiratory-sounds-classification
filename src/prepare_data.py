@@ -3,7 +3,7 @@ from data_preparation.audio_preprocessing import audio_preprocessing
 from data_preparation.feature_extraction import load_audio_data, feature_extraction
 
 if __name__ == '__main__':
-    dataset_path = './dataset/respiratory_sound_database/Respiratory_Sound_Database/audio_and_txt_files/'
+    dataset_path = './dataset/'
     raw_respiratory_cycles_path = 'results/preprocessing/raw_respiratory_cycles/'
     preprocessed_respiratory_cycles_path = 'results/preprocessing/preprocessed_respiratory_cycles/'
     melspectrograms_path = 'results/preprocessing/mel_spectrograms'

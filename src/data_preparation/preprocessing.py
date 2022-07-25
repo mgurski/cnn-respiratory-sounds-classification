@@ -7,7 +7,7 @@ import soundfile as sf
 def audio_description_information(path: str) -> pd.DataFrame:
     df_list = []
     for filename in os.listdir(path):
-        if filename.endswith('txt'):
+        if filename.endswith('txt') and not filename.startswith('filename'):
             annotations_df = pd.read_csv(os.path.join(path, filename), names=[
                 'Starts', 'Ends', 'Crackles', 'Wheezes'], delimiter='\t')
 
@@ -77,7 +77,7 @@ def divide_audio_into_respiratory_cycles(read_path: str, write_path: str, audio_
 
 
 if __name__ == '__main__':
-    data_path = './dataset/respiratory_sound_database/Respiratory_Sound_Database/audio_and_txt_files/'
+    data_path = './dataset/'
     raw_respiratory_cycles_path = 'results/preprocessing/raw_respiratory_cycles/'
 
     audio_descriptions_df = audio_description_information(data_path)
